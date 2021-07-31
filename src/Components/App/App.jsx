@@ -1,11 +1,18 @@
 import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Display from "../Display";
+import Header from "../Header";
 import Main from "../Main";
 import "./style.css";
 
 export default function App() {
   return (
-    <div className="app_wrapper">
-      <Main />
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Main} />
+        <Route path="/books" component={Display} />
+      </Switch>
+    </BrowserRouter>
   );
 }
