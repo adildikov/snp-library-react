@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Display from "../Display";
+import DisplayContainer from "../Display/DisplayContainer";
 import Header from "../Header";
-import Main from "../Main";
+import MainContainer from "../Main/MainContainer";
 import "./style.css";
 
 export default function App() {
@@ -10,8 +10,8 @@ export default function App() {
     <BrowserRouter>
       <Header />
       <Switch>
-        <Route exact path="/" component={Main} />
-        <Route path="/current_book" component={Display} />
+        <Route exact path="/" component={MainContainer} />
+        <Route path="/current_book" component={DisplayContainer} />
       </Switch>
     </BrowserRouter>
   );

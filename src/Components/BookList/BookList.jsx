@@ -1,9 +1,8 @@
 import React from "react";
 import "./style.css";
-import books from "./mockBooks";
 import Book from "../Book/Book";
 
-export default function BookList() {
+export default function BookList({ books }) {
   return (
     <ul className="BookList_wrapper">
       {books.map((book) => (
