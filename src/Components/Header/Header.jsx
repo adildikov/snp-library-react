@@ -13,7 +13,7 @@ export default function Header() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/books">Books</NavLink>
+            <NavLink to="/current_book">Current book</NavLink>
           </li>
         </ul>
       </nav>
