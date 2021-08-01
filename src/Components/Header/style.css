@@ -1,6 +1,6 @@
 .header_wrapper {
   min-height: 50px;
-  background-color: #c4c4c4;
+  background-color: rgb(62, 139, 255);
   display: flex;
   align-items: stretch;
   justify-content: flex-end;

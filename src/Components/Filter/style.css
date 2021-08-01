@@ -1,0 +1,44 @@
+.filter_wrapper {
+  width: 80%;
+  margin: 30px auto;
+
+  display: flex;
+  justify-content: center;
+}
+
+.filter__input {
+  width: 80%;
+  height: 40px;
+
+  padding-left: 20px;
+
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+
+  background-color: rgb(211, 211, 211);
+}
+
+.filter__input:focus {
+  outline: none;
+
+  background-color: rgb(231, 231, 231);
+}
+
+.filter__submit {
+  width: 100px;
+  height: 40px;
+
+  margin-left: 20px;
+
+  border: none;
+  border-radius: 5px;
+
+  color: #fff;
+  background-color: rgb(62, 139, 255);
+}
+
+.filter__submit:hover {
+  cursor: pointer;
+  background-color: rgb(55, 124, 228);
+}

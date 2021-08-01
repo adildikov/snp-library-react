@@ -12,6 +12,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={MainContainer} />
         <Route exact path="/books" component={MainContainer} />
+        <Route path="/books/?search=:filter" component={MainContainer} />
         <Route path="/books/:bookId?" component={DisplayContainer} />
       </Switch>
     </BrowserRouter>
