@@ -25,6 +25,7 @@ export default React.memo(function ModalContainer({
         className="body__input"
         type="text"
         placeholder="Title of the book"
+        value={newBook.title}
         onChange={(e) => onEditNewBook(e, "title")}
       />
       <input

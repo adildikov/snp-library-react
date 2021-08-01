@@ -11,6 +11,7 @@ export default React.memo(function Main({
   onToggleModalOpen,
   onEditNewBook,
   onSubmit,
+  newBook,
 }) {
   return (
     <div className="main_wrapper">
@@ -20,6 +21,7 @@ export default React.memo(function Main({
         <p className="addBookBtn__text">Add new book</p>
       </button>
       <ModalContainer
+        newBook={newBook}
         onSubmit={onSubmit}
         onEditNewBook={onEditNewBook}
         isOpen={isModalOpen}

@@ -34,6 +34,7 @@ export default function MainContainer() {
 
   return (
     <Main
+      newBook={newBook}
       books={books}
       isModalOpen={isModalOpen}
       onToggleModalOpen={handleToggleModalOpen}
