@@ -11,7 +11,6 @@ export default function DisplayContainer() {
   const currentBook = useMemo(() => {
     return books.filter((book) => book.id === id)[0];
   }, [books, id]);
-  console.log(currentBook);
 
   return <Display book={currentBook} />;
 }

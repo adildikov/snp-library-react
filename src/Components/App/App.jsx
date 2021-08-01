@@ -11,7 +11,8 @@ export default function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={MainContainer} />
-        <Route path="/current_book" component={DisplayContainer} />
+        <Route exact path="/books" component={MainContainer} />
+        <Route path="/books/:bookId?" component={DisplayContainer} />
       </Switch>
     </BrowserRouter>
   );
