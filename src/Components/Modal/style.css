@@ -124,6 +124,10 @@
   cursor: pointer;
 }
 
+.submitBtn:hover {
+  background-color: rgb(55, 124, 228);
+}
+
 .close {
   color: black;
 }
