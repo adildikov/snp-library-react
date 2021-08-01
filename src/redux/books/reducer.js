@@ -1,4 +1,4 @@
-import { ADD_BOOK } from "../constants";
+import { ADD_BOOK, DELETE_BOOK, EDIT_BOOK } from "../constants";
 
 const initialState = {
   books: [
@@ -58,7 +58,7 @@ const initialState = {
   ],
 };
 
-const books = (state = initialState.books, { type, newBook }) => {
+const books = (state = initialState.books, { type, newBook, id }) => {
   switch (type) {
     case ADD_BOOK:
       return [
@@ -71,6 +71,18 @@ const books = (state = initialState.books, { type, newBook }) => {
           image: newBook.image,
         },
       ];
+    case DELETE_BOOK:
+      return [...state].filter((book) => book.id !== id);
+    case EDIT_BOOK:
+      return [...state].map((book) => {
+        if (book.id === id) {
+          book.title = newBook.title;
+          book.author = newBook.author;
+          book.description = newBook.description;
+          book.image = newBook.image;
+        }
+        return book;
+      });
     default:
       return state;
   }

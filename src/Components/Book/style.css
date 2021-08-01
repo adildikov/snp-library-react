@@ -23,8 +23,6 @@
 }
 
 .book_wrapper:hover {
-  cursor: pointer;
-
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 
   transform: translate(10px, -10px);
@@ -40,12 +38,31 @@
   z-index: 0;
   align-self: center;
   flex-direction: column;
+
+  cursor: pointer;
 }
 
 .book_info {
   text-align: center;
 
   margin: 10px 15px 0 15px;
+}
+
+.book_info .badges {
+  width: 50px;
+  position: absolute;
+  right: 10px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.badges .badges__delete {
+  cursor: pointer;
+}
+
+.badges .badges__edit {
+  cursor: pointer;
 }
 
 .book__titleSmall {

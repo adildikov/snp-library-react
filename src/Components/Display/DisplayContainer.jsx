@@ -14,14 +14,14 @@ export default function DisplayContainer() {
     return books.filter((book) => book.id === id)[0];
   }, [books, id]);
 
-  const handlerBackToLibraryClick = useCallback(() => {
+  const handleBackToLibraryClick = useCallback(() => {
     history.push("/books");
   }, [history]);
 
   return (
     <Display
       book={currentBook}
-      onBackToLibraryClick={handlerBackToLibraryClick}
+      onBackToLibraryClick={handleBackToLibraryClick}
     />
   );
 }
