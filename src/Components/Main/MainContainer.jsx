@@ -25,6 +25,12 @@ export default function MainContainer() {
   const handleSubmit = useCallback(() => {
     dispatch(addBook(newBook));
     setModalOpen(false);
+    editNewBook({
+      title: "",
+      author: "",
+      description: "",
+      image: "",
+    });
   }, [dispatch, newBook, setModalOpen]);
 
   const handleEditNewBook = useCallback(
