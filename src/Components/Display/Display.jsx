@@ -5,7 +5,7 @@ import "./style.css";
 import defaultCover from "../../assets/defaultCover.jpg";
 import { isValidImage } from "../../utils";
 
-export default React.memo(function Display({ book }) {
+export default React.memo(function Display({ book, onBackToLibraryClick }) {
   return (
     <div className="display_wrapper">
       <Title title={"There is info about «" + book.title + "»"} />
@@ -29,7 +29,9 @@ export default React.memo(function Display({ book }) {
           <span className="info__title">{fieldsNames.description}</span>
           <p className="book__description">{book.description}</p>
         </div>
-        <button className="backBtn">Back to the library</button>
+        <button onClick={onBackToLibraryClick} className="backBtn">
+          Back to the library
+        </button>
       </div>
     </div>
   );

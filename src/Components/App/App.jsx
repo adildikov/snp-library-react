@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import DisplayContainer from "../Display/DisplayContainer";
-import Header from "../Header";
+import HeaderContainer from "../Header/HeaderContainer";
 import MainContainer from "../Main/MainContainer";
 import "./style.css";
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <HeaderContainer />
       <Switch>
         <Route exact path="/" component={MainContainer} />
         <Route exact path="/books" component={MainContainer} />
