@@ -1,20 +1,21 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect } from "react";
 import Filter from "./Filter";
 import queryString from "query-string";
 import { useHistory, useLocation } from "react-router-dom";
 
-export default function FilterContainer() {
+export default React.memo(function FilterContainer({
+  currentFilter,
+  onChangeCurrentFilter,
+}) {
   const history = useHistory();
   const location = useLocation();
-
-  const [currentFilter, changeCurrentFilter] = useState("");
 
   useEffect(() => {
     const queryStringFilter = queryString.parse(location.search).search;
     if (queryStringFilter) {
-      changeCurrentFilter(queryStringFilter);
+      onChangeCurrentFilter(queryStringFilter);
     }
-  }, [location.search]);
+  }, [location.search, onChangeCurrentFilter]);
 
   const handleSearchSubmit = useCallback(() => {
     if (!currentFilter.length) {
@@ -37,9 +38,12 @@ export default function FilterContainer() {
     [currentFilter, history]
   );
 
-  const handleInputChange = useCallback((e) => {
-    changeCurrentFilter(e.target.value);
-  }, []);
+  const handleInputChange = useCallback(
+    (e) => {
+      onChangeCurrentFilter(e.target.value);
+    },
+    [onChangeCurrentFilter]
+  );
 
   return (
     <Filter
@@ -49,4 +53,4 @@ export default function FilterContainer() {
       onKeyPressed={handleKeyPressed}
     />
   );
-}
+});

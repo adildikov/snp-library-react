@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import Main from "./Main";
 import { useDispatch, useSelector } from "react-redux";
 import { getBooks } from "../../redux/books/selectors";
@@ -15,6 +15,7 @@ export default function MainContainer() {
     description: "",
     image: "",
   });
+  const [currentFilter, changeCurrentFilter] = useState("");
 
   const handleToggleModalOpen = useCallback(() => {
     setModalOpen(!isModalOpen);
@@ -32,14 +33,24 @@ export default function MainContainer() {
     [newBook]
   );
 
+  const handleChangeCurrentFilter = useCallback((filter) => {
+    changeCurrentFilter(filter);
+  }, []);
+
+  const filteredBooks = useMemo(() => {
+    return books.filter((book) => book.title.includes(currentFilter));
+  }, [books, currentFilter]);
+
   return (
     <Main
       newBook={newBook}
-      books={books}
+      currentFilter={currentFilter}
+      books={filteredBooks}
       isModalOpen={isModalOpen}
       onToggleModalOpen={handleToggleModalOpen}
       onEditNewBook={handleEditNewBook}
       onSubmit={handleSubmit}
+      onChangeCurrentFilter={handleChangeCurrentFilter}
     />
   );
 }

@@ -13,11 +13,16 @@ export default React.memo(function Main({
   onEditNewBook,
   onSubmit,
   newBook,
+  currentFilter,
+  onChangeCurrentFilter,
 }) {
   return (
     <div className="main_wrapper">
       <Title title="This is a main page of the library" />
-      <FilterContainer />
+      <FilterContainer
+        currentFilter={currentFilter}
+        onChangeCurrentFilter={onChangeCurrentFilter}
+      />
       <button className="addBookBtn" onClick={onToggleModalOpen}>
         <FaPlus className="addBookBtn__icon" />
         <p className="addBookBtn__text">Add new book</p>
