@@ -1,9 +1,11 @@
 import React from "react";
 import "./style.css";
+import { ImCross } from "react-icons/im";
 
 export default function Filter({
   onSearchSubmit,
   onInputChange,
+  onInputClear,
   currentFilter,
   onKeyPressed,
 }) {
@@ -17,6 +19,7 @@ export default function Filter({
         onChange={onInputChange}
         onKeyPress={onKeyPressed}
       />
+      <ImCross onClick={onInputClear} className={"filter__clear"} />
       <button onClick={onSearchSubmit} className="filter__submit">
         Search
       </button>

@@ -1,9 +1,17 @@
 .filter_wrapper {
   width: 80%;
+  height: 80px;
+
   margin: 30px auto;
+  padding: 20px 0;
 
   display: flex;
   justify-content: center;
+
+  background-color: rgb(211, 211, 211);
+
+  border: none;
+  border-radius: 5px;
 }
 
 .filter__input {
@@ -16,13 +24,11 @@
   border: none;
   border-radius: 10px;
 
-  background-color: rgb(211, 211, 211);
+  background-color: #fff;
 }
 
 .filter__input:focus {
   outline: none;
-
-  background-color: rgb(231, 231, 231);
 }
 
 .filter__submit {
@@ -41,4 +47,12 @@
 .filter__submit:hover {
   cursor: pointer;
   background-color: rgb(55, 124, 228);
+}
+
+.filter__clear {
+  margin: 10px 0 0 5px;
+}
+
+.filter__clear:hover {
+  cursor: pointer;
 }

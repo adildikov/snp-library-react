@@ -11,6 +11,7 @@ export default function FilterContainer() {
   const dispatch = useDispatch();
 
   const [currentFilter, changeCurrentFilter] = useState("");
+  const [isSearching, setSearching] = useState(false);
 
   useEffect(() => {
     const queryStringFilter = queryString.parse(location.search).search;
@@ -19,7 +20,14 @@ export default function FilterContainer() {
     }
   }, [location.search, changeCurrentFilter]);
 
+  useEffect(() => {
+    if (!isSearching && currentFilter !== "") {
+      dispatch(editCurrentFilter(currentFilter));
+    }
+  }, [dispatch, currentFilter, isSearching]);
+
   const handleSearchSubmit = useCallback(() => {
+    setSearching(false);
     dispatch(editCurrentFilter(currentFilter));
     if (!currentFilter.length) {
       history.push("/books");
@@ -31,6 +39,7 @@ export default function FilterContainer() {
   const handleKeyPressed = useCallback(
     (e) => {
       if (e.key === "Enter") {
+        setSearching(false);
         dispatch(editCurrentFilter(currentFilter));
         if (!currentFilter.length) {
           history.push("/books");
@@ -44,16 +53,25 @@ export default function FilterContainer() {
 
   const handleInputChange = useCallback(
     (e) => {
+      setSearching(true);
       changeCurrentFilter(e.target.value);
     },
     [changeCurrentFilter]
   );
+
+  const handleInputClear = useCallback(() => {
+    setSearching(false);
+    changeCurrentFilter("");
+    dispatch(editCurrentFilter(""));
+    history.push("/books");
+  }, [dispatch, history]);
 
   return (
     <Filter
       currentFilter={currentFilter}
       onSearchSubmit={handleSearchSubmit}
       onInputChange={handleInputChange}
+      onInputClear={handleInputClear}
       onKeyPressed={handleKeyPressed}
     />
   );
