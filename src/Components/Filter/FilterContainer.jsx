@@ -1,33 +1,37 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Filter from "./Filter";
 import queryString from "query-string";
 import { useHistory, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { editCurrentFilter } from "../../redux/currentFilter/actions";
 
-export default React.memo(function FilterContainer({
-  currentFilter,
-  onChangeCurrentFilter,
-}) {
+export default function FilterContainer() {
   const history = useHistory();
   const location = useLocation();
+  const dispatch = useDispatch();
+
+  const [currentFilter, changeCurrentFilter] = useState("");
 
   useEffect(() => {
     const queryStringFilter = queryString.parse(location.search).search;
     if (queryStringFilter) {
-      onChangeCurrentFilter(queryStringFilter);
+      changeCurrentFilter(queryStringFilter);
     }
-  }, [location.search, onChangeCurrentFilter]);
+  }, [location.search, changeCurrentFilter]);
 
   const handleSearchSubmit = useCallback(() => {
+    dispatch(editCurrentFilter(currentFilter));
     if (!currentFilter.length) {
       history.push("/books");
     } else {
       history.push(`/books/?search=${currentFilter}`);
     }
-  }, [currentFilter, history]);
+  }, [dispatch, currentFilter, history]);
 
   const handleKeyPressed = useCallback(
     (e) => {
       if (e.key === "Enter") {
+        dispatch(editCurrentFilter(currentFilter));
         if (!currentFilter.length) {
           history.push("/books");
         } else {
@@ -35,14 +39,14 @@ export default React.memo(function FilterContainer({
         }
       }
     },
-    [currentFilter, history]
+    [dispatch, currentFilter, history]
   );
 
   const handleInputChange = useCallback(
     (e) => {
-      onChangeCurrentFilter(e.target.value);
+      changeCurrentFilter(e.target.value);
     },
-    [onChangeCurrentFilter]
+    [changeCurrentFilter]
   );
 
   return (
@@ -53,4 +57,4 @@ export default React.memo(function FilterContainer({
       onKeyPressed={handleKeyPressed}
     />
   );
-});
+}

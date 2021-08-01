@@ -3,11 +3,13 @@ import Main from "./Main";
 import { useDispatch, useSelector } from "react-redux";
 import { getBooks } from "../../redux/books/selectors";
 import { addBook } from "../../redux/books/actions";
+import { getCurrentFilter } from "../../redux/currentFilter/selectors";
 
 export default function MainContainer() {
   const dispatch = useDispatch();
 
   const books = useSelector(getBooks);
+  const currentFilter = useSelector(getCurrentFilter);
   const [isModalOpen, setModalOpen] = useState(false);
   const [newBook, editNewBook] = useState({
     title: "",
@@ -15,7 +17,6 @@ export default function MainContainer() {
     description: "",
     image: "",
   });
-  const [currentFilter, changeCurrentFilter] = useState("");
 
   const handleToggleModalOpen = useCallback(() => {
     setModalOpen(!isModalOpen);
@@ -33,24 +34,23 @@ export default function MainContainer() {
     [newBook]
   );
 
-  const handleChangeCurrentFilter = useCallback((filter) => {
-    changeCurrentFilter(filter);
-  }, []);
-
   const filteredBooks = useMemo(() => {
-    return books.filter((book) => book.title.includes(currentFilter));
+    return books.filter(
+      (book) =>
+        book.title.toLowerCase().includes(currentFilter) ||
+        book.title.toUpperCase().includes(currentFilter) ||
+        book.title.includes(currentFilter)
+    );
   }, [books, currentFilter]);
 
   return (
     <Main
       newBook={newBook}
-      currentFilter={currentFilter}
       books={filteredBooks}
       isModalOpen={isModalOpen}
       onToggleModalOpen={handleToggleModalOpen}
       onEditNewBook={handleEditNewBook}
       onSubmit={handleSubmit}
-      onChangeCurrentFilter={handleChangeCurrentFilter}
     />
   );
 }
