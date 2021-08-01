@@ -1,3 +1,5 @@
+import { ADD_BOOK } from "../constants";
+
 const initialState = {
   books: [
     {
@@ -56,8 +58,19 @@ const initialState = {
   ],
 };
 
-const books = (state = initialState.books, { type }) => {
+const books = (state = initialState.books, { type, newBook }) => {
   switch (type) {
+    case ADD_BOOK:
+      return [
+        ...state,
+        {
+          id: new Date().getTime(),
+          title: newBook.title,
+          author: newBook.author,
+          description: newBook.description,
+          image: newBook.image,
+        },
+      ];
     default:
       return state;
   }

@@ -1,6 +1,6 @@
-import { GET_BOOKS, GET_BOOK_BY_ID } from "../constants";
+import { ADD_BOOK } from "../constants";
 
-export const getBookById = ({ id }) => ({
-  type: GET_BOOK_BY_ID,
-  id,
+export const addBook = (newBook) => ({
+  type: ADD_BOOK,
+  newBook,
 });

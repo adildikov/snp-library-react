@@ -9,7 +9,7 @@
   background-color: rgb(179, 179, 179);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 
-  margin: 20px 0 20px 0;
+  margin: 20px 0 20px 30px;
 
   list-style: none;
 
@@ -17,6 +17,9 @@
 
   transform: translate(0px, 0px);
   transition: transform 0.15s linear, box-shadow 0.15s linear;
+
+  border: none;
+  border-radius: 10px;
 }
 
 .book_wrapper:hover {
