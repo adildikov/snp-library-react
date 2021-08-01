@@ -1,7 +1,15 @@
 .header__title {
+  width: 85%;
+
+  display: flex;
+
   font-size: 55px;
   font-weight: bold;
+
   color: #201d1b;
-  margin: 20px 0 0 0;
+
+  margin: 20px auto 0 auto;
+
   text-align: center;
+  justify-content: center;
 }

@@ -1,4 +1,4 @@
-const currentBookIdInit = 1;
+const currentBookIdInit = 0;
 
 const currentBookId = (state = currentBookIdInit, { type }) => {
   switch (type) {
