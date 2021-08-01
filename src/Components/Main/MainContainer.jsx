@@ -45,7 +45,10 @@ export default function MainContainer() {
       (book) =>
         book.title.toLowerCase().includes(currentFilter) ||
         book.title.toUpperCase().includes(currentFilter) ||
-        book.title.includes(currentFilter)
+        book.title.includes(currentFilter) ||
+        book.author.toLowerCase().includes(currentFilter) ||
+        book.author.toUpperCase().includes(currentFilter) ||
+        book.author.includes(currentFilter)
     );
   }, [books, currentFilter]);
 
