@@ -11,15 +11,16 @@ export default React.memo(function BookContainer({
   title,
   author,
   bookCover,
+  description,
 }) {
   const dispatch = useDispatch();
   const history = useHistory();
 
   const [newBook, editNewBook] = useState({
-    title: "",
-    author: "",
-    description: "",
-    image: "",
+    title: title,
+    author: author,
+    description: description,
+    image: bookCover,
   });
   const [isModalOpen, setModalOpen] = useState(false);
 
