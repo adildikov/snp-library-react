@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import { ImCross } from "react-icons/im";
 
-export default function Filter({
+export default React.memo(function Filter({
   onSearchSubmit,
   onInputChange,
   onInputClear,
@@ -25,4 +25,4 @@ export default function Filter({
       </button>
     </div>
   );
-}
+});
