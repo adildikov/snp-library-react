@@ -2,7 +2,7 @@
   width: 80%;
   height: 80px;
 
-  margin: 30px auto;
+  margin: 30px auto 20px auto;
   padding: 20px 0;
 
   display: flex;
@@ -55,4 +55,10 @@
 
 .filter__clear:hover {
   cursor: pointer;
+}
+
+.filterSearch__info {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
 }

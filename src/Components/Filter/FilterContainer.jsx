@@ -69,6 +69,7 @@ export default function FilterContainer() {
   return (
     <Filter
       currentFilter={currentFilter}
+      isSearching={isSearching}
       onSearchSubmit={handleSearchSubmit}
       onInputChange={handleInputChange}
       onInputClear={handleInputClear}
