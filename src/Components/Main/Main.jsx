@@ -12,6 +12,7 @@ export default React.memo(function Main({
   onToggleModalOpen,
   onEditNewBook,
   onSubmit,
+  onCancel,
   newBook,
 }) {
   return (
@@ -25,6 +26,7 @@ export default React.memo(function Main({
       <ModalContainer
         newBook={newBook}
         onSubmit={onSubmit}
+        onCancel={onCancel}
         onEditNewBook={onEditNewBook}
         isOpen={isModalOpen}
         onToggleModalOpen={onToggleModalOpen}

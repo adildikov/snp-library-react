@@ -16,6 +16,7 @@ export default React.memo(function Book({
   isModalOpen,
   onToggleModalOpen,
   onSubmit,
+  onCancel,
 }) {
   return (
     <li className="book_wrapper">
@@ -40,9 +41,9 @@ export default React.memo(function Book({
       <ModalContainer
         newBook={newBook}
         onSubmit={onSubmit}
+        onCancel={onCancel}
         onEditNewBook={onEditNewBook}
         isOpen={isModalOpen}
-        onToggleModalOpen={onToggleModalOpen}
         title={"Edit info about book"}
       />
     </li>

@@ -33,6 +33,16 @@ export default function MainContainer() {
     });
   }, [dispatch, newBook, setModalOpen]);
 
+  const handleCancel = useCallback(() => {
+    setModalOpen(false);
+    editNewBook({
+      title: "",
+      author: "",
+      description: "",
+      image: "",
+    });
+  }, [setModalOpen]);
+
   const handleEditNewBook = useCallback(
     (e, field) => {
       editNewBook({ ...newBook, [field]: e.target.value });
@@ -60,6 +70,7 @@ export default function MainContainer() {
       onToggleModalOpen={handleToggleModalOpen}
       onEditNewBook={handleEditNewBook}
       onSubmit={handleSubmit}
+      onCancel={handleCancel}
     />
   );
 }

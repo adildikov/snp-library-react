@@ -1,25 +1,21 @@
-import React, { useCallback } from "react";
+import React from "react";
 import Modal from "./Modal";
 import "./style.css";
 
 export default React.memo(function ModalContainer({
   newBook,
   isOpen,
-  onToggleModalOpen,
   onEditNewBook,
   title,
   onSubmit,
+  onCancel,
 }) {
-  const handleCancel = useCallback(() => {
-    onToggleModalOpen(false);
-  }, [onToggleModalOpen]);
-
   return (
     <Modal
       title={title}
       isOpen={isOpen}
       onSubmit={onSubmit}
-      onCancel={handleCancel}
+      onCancel={onCancel}
     >
       <input
         className="body__input"

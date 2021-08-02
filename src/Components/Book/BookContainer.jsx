@@ -49,14 +49,18 @@ export default React.memo(function BookContainer({
     setModalOpen(false);
   }, [dispatch, id, newBook, setModalOpen]);
 
+  const handleCancel = useCallback(() => {
+    setModalOpen(false);
+  }, [setModalOpen]);
+
   return (
     <Book
-      id={id}
       title={title}
       author={author}
       bookCover={bookCover}
       isModalOpen={isModalOpen}
       onSubmit={handleSubmit}
+      onCancel={handleCancel}
       onToggleModalOpen={handleToggleModalOpen}
       onDeleteBookClick={handleDeleteBookClick}
       onBookClick={handleBookClick}
