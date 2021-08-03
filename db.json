@@ -1,0 +1,39 @@
+{
+  "books": [
+    {
+      "id": 0,
+      "title": "It (novel)",
+      "author": "Stephen King",
+      "description": "It is a 1986 horror novel by American author Stephen King. It was his 22nd book and his 17th novel written under his own name. The story follows the experiences of seven children as they are terrorized by an evil entity that exploits the fears of its victims to disguise itself while hunting its prey. 'It' primarily appears in the form of Pennywise the Dancing Clown to attract its preferred prey of young children.",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/78/It_%28Stephen_King_novel_-_cover_art%29.jpg/220px-It_%28Stephen_King_novel_-_cover_art%29.jpg"
+    },
+    {
+      "id": 1,
+      "title": "The Lord of the Rings",
+      "author": "J. R. R. Tolkien",
+      "description": "The Lord of the Rings is an epic[1] high fantasy novel[a] by the English author and scholar J. R. R. Tolkien. Set in Middle-earth, on Earth at some distant time in the past, the story began as a sequel to Tolkien's 1937 children's book The Hobbit, but eventually developed into a much larger work. Written in stages between 1937 and 1949, The Lord of the Rings is one of the best-selling books ever written, with over 150 million copies sold.[2]",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/First_Single_Volume_Edition_of_The_Lord_of_the_Rings.gif/220px-First_Single_Volume_Edition_of_The_Lord_of_the_Rings.gif"
+    },
+    {
+      "id": 2,
+      "title": "Война и мир",
+      "author": "Лев Николаевич Толстой",
+      "description": "«Война́ и мир» (рус. дореф. «Война и миръ») — роман-эпопея Льва Николаевича Толстого, описывающий русское общество в эпоху войн против Наполеона в 1805—1812 годах. Эпилог романа доводит повествование до 1820 года.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/T25-011.jpg/270px-T25-011.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Метро 2033",
+      "author": "Дмитрий Глуховский",
+      "description": "«Метро́ 2033» — постапокалиптический роман Дмитрия Глуховского, описывающий жизнь людей в московском метро после ядерной войны на Земле. Выпущен издательством «Эксмо» в 2005 году и переиздан издательством «Популярная литература» в 2007 году. На европейском литературном конкурсе «Еврокон» роман назван «Лучшим дебютом» 2007 года[1]. Меньше чем за три месяца тираж переиздания в 100 тысяч экземпляров был полностью продан, издательство выпустило дополнительный 100-тысячный тираж[2], который был распродан менее чем за год к маю 2008 года, третий тираж составил 50 тысяч экземпляров[3]. Одна из презентаций прошла в рассекреченном бункере Министерства связи на Таганской на глубине 60 метров. Роман также лёг в основу компьютерной игры Metro 2033.",
+      "image": "https://upload.wikimedia.org/wikipedia/ru/c/c2/Metro_2033_Eksmo.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Обломов",
+      "author": "Иван Александрович Гончаров",
+      "description": "«Обло́мов» — роман, написанный русским писателем Иваном Александровичем Гончаровым в период с 1847 по 1859 год. Впервые был опубликован в 1859 году. Роман входит в трилогию вместе с произведениями «Обыкновенная история» и «Обрыв», являясь её второй частью.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Обломов.jpg/255px-Обломов.jpg"
+    }
+  ]
+}

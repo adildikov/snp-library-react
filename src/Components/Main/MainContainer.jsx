@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getBooks } from "../../redux/books/selectors";
 import { addBook } from "../../redux/books/actions";
 import { getCurrentFilter } from "../../redux/currentFilter/selectors";
+import { useEffect } from "react";
+import { initBooksThunk } from "../../redux/books/thunks";
 
 export default function MainContainer() {
   const dispatch = useDispatch();
@@ -17,6 +19,8 @@ export default function MainContainer() {
     description: "",
     image: "",
   });
+
+  useEffect(() => dispatch(initBooksThunk()), [dispatch]);
 
   const handleToggleModalOpen = useCallback(() => {
     setModalOpen(!isModalOpen);
