@@ -2,10 +2,9 @@ import React, { useCallback, useMemo, useState } from "react";
 import Main from "./Main";
 import { useDispatch, useSelector } from "react-redux";
 import { getBooks } from "../../redux/books/selectors";
-import { addBook } from "../../redux/books/actions";
 import { getCurrentFilter } from "../../redux/currentFilter/selectors";
 import { useEffect } from "react";
-import { initBooksThunk } from "../../redux/books/thunks";
+import { initBooksThunk, addBookThunk } from "../../redux/books/thunks";
 
 export default function MainContainer() {
   const dispatch = useDispatch();
@@ -27,7 +26,7 @@ export default function MainContainer() {
   }, [isModalOpen]);
 
   const handleSubmit = useCallback(() => {
-    dispatch(addBook(newBook));
+    dispatch(addBookThunk(newBook));
     setModalOpen(false);
     editNewBook({
       title: "",
