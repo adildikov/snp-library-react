@@ -22,3 +22,13 @@ export const deleteBookRequest = (apiUrl, id) => {
     },
   });
 };
+
+export const editBookRequest = (apiUrl, id, data) => {
+  return fetch(apiUrl + `/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+};

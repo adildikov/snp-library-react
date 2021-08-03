@@ -4,8 +4,7 @@ import Book from "./Book";
 import { useDispatch } from "react-redux";
 import { editCurrentBookId } from "../../redux/currentBookId/actions";
 import { useHistory } from "react-router-dom";
-import { editBook } from "../../redux/books/actions";
-import { deleteBookThunk } from "../../redux/books/thunks";
+import { deleteBookThunk, editBookThunk } from "../../redux/books/thunks";
 
 export default React.memo(function BookContainer({
   id,
@@ -46,7 +45,7 @@ export default React.memo(function BookContainer({
   );
 
   const handleSubmit = useCallback(() => {
-    dispatch(editBook(id, newBook));
+    dispatch(editBookThunk(id, newBook));
     setModalOpen(false);
   }, [dispatch, id, newBook, setModalOpen]);
 
