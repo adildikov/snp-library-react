@@ -34,6 +34,20 @@
       "author": "Иван Александрович Гончаров",
       "description": "«Обло́мов» — роман, написанный русским писателем Иваном Александровичем Гончаровым в период с 1847 по 1859 год. Впервые был опубликован в 1859 году. Роман входит в трилогию вместе с произведениями «Обыкновенная история» и «Обрыв», являясь её второй частью.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Обломов.jpg/255px-Обломов.jpg"
+    },
+    {
+      "title": "Harry Potter",
+      "author": "J. K. Rowling",
+      "description": "Harry Potter is a series of seven fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry. The main story arc concerns Harry's struggle against Lord Voldemort, a dark wizard who intends to become immortal, overthrow the wizard governing body known as the Ministry of Magic and subjugate all wizards and Muggles (non-magical people).",
+      "image": "https://is5-ssl.mzstatic.com/image/thumb/Music124/v4/b4/37/51/b437512a-7568-3b89-efae-fb9b95f373c3/HP8Film_V_DD_KA_TT_2000x3000_300dpi_CA.jpg/1200x630bb.png",
+      "id": 5
+    },
+    {
+      "title": "Like a Sparrow Through the Heart",
+      "author": "Aggy Bird",
+      "description": "Talon the griffin is broken-hearted - so, can you really blame him for not-quite-accidentally trying to kill a guy? Flit the sparrow sure can. Now the sparrow has taken over Talon's life, and Talon hates it. But maybe things will turn out all right. If only Flit would stop decorating the place.",
+      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1292076324l/8476029.jpg",
+      "id": 6
     }
   ]
 }

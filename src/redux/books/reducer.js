@@ -4,7 +4,10 @@ const initialState = {
   books: [],
 };
 
-const books = (state = initialState.books, { type, newBook, id, newBooks }) => {
+const books = (
+  state = initialState.books,
+  { type, newBook, id, newBooks, filterStr }
+) => {
   switch (type) {
     case ADD_BOOK:
       return [

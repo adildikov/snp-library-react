@@ -1,7 +1,14 @@
 export const apiUrl = "http://localhost:3001/books";
 
 export const getBooksRequest = (apiUrl) => {
-  return fetch(apiUrl);
+  return fetch(apiUrl)
+    .then((response) => {
+      if (!response.ok) throw new Error();
+      return response.json();
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
 };
 
 export const postBookRequest = (apiUrl, data) => {
@@ -11,7 +18,14 @@ export const postBookRequest = (apiUrl, data) => {
     headers: {
       "Content-Type": "application/json",
     },
-  });
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error();
+      return response.json();
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
 };
 
 export const deleteBookRequest = (apiUrl, id) => {
@@ -20,7 +34,14 @@ export const deleteBookRequest = (apiUrl, id) => {
     headers: {
       "Content-Type": "application/json",
     },
-  });
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error();
+      return response.json();
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
 };
 
 export const editBookRequest = (apiUrl, id, data) => {
@@ -30,5 +51,23 @@ export const editBookRequest = (apiUrl, id, data) => {
     headers: {
       "Content-Type": "application/json",
     },
-  });
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error();
+      return response.json();
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
+};
+
+export const getFilteredBooksRequest = (apiUrl, str) => {
+  return fetch(apiUrl + `?q=${str}`)
+    .then((response) => {
+      if (!response.ok) throw new Error();
+      return response.json();
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
 };

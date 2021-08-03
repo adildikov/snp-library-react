@@ -4,6 +4,10 @@ import queryString from "query-string";
 import { useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { editCurrentFilter } from "../../redux/currentFilter/actions";
+import {
+  getFilteredBooksThunk,
+  initBooksThunk,
+} from "../../redux/books/thunks";
 
 export default function FilterContainer() {
   const history = useHistory();
@@ -29,6 +33,7 @@ export default function FilterContainer() {
   const handleSearchSubmit = useCallback(() => {
     setSearching(false);
     dispatch(editCurrentFilter(currentFilter));
+    dispatch(getFilteredBooksThunk(currentFilter));
     if (!currentFilter.length) {
       history.push("/books");
     } else {
@@ -41,6 +46,7 @@ export default function FilterContainer() {
       if (e.key === "Enter") {
         setSearching(false);
         dispatch(editCurrentFilter(currentFilter));
+        dispatch(getFilteredBooksThunk(currentFilter));
         if (!currentFilter.length) {
           history.push("/books");
         } else {
@@ -63,6 +69,7 @@ export default function FilterContainer() {
     setSearching(false);
     changeCurrentFilter("");
     dispatch(editCurrentFilter(""));
+    dispatch(initBooksThunk());
     history.push("/books");
   }, [dispatch, history]);
 
