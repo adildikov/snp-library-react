@@ -11,6 +11,10 @@
   border: none;
   border-radius: 5px;
   background-color: rgb(211, 211, 211);
+
+  @media screen and (max-width: 1000px){
+    padding: 20px 10px;
+  }
 }
 
 .filter__input {
