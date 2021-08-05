@@ -10,16 +10,16 @@ const librarySlice = createSlice({
   name: "library",
   initialState,
   reducers: {
-    addBook(state, { newBook }) {
-      state.books.push(newBook);
+    addBook(state, newBook) {
+      state.books.push(newBook.payload);
     },
-    deleteBook(state, { id }) {
-      state.books.filter((book) => book.id !== id);
+    deleteBook(state, id) {
+      state.books.filter((book) => book.id !== id.payload);
     },
-    editBook(state, { id, newBook }) {
+    editBook(state, id, newBook) {
       state.books.forEach((book) => {
-        if (book.id === id) {
-          book = newBook;
+        if (book.id === id.payload) {
+          book = newBook.payload;
         }
       });
     },
