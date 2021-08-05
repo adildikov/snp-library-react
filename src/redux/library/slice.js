@@ -1,12 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+  books: [],
+  currentBookId: 0,
+  currentFilter: "",
+};
+
 const librarySlice = createSlice({
   name: "library",
-  initialState: {
-    books: [],
-    currentBookId: 0,
-    currentFilter: "",
-  },
+  initialState,
   reducers: {
     addBook(state, { newBook }) {
       state.books.push(newBook);
@@ -24,16 +26,16 @@ const librarySlice = createSlice({
     setBooks(state, newBooks) {
       state.books = newBooks.payload;
     },
-    editCurrentBookId(state, { id }) {
-      state.currentBookId = id;
+    editCurrentBookId(state, id) {
+      state.currentBookId = id.payload;
     },
-    editCurrentFilter(state, { filter }) {
-      state.currentFilter = filter;
+    editCurrentFilter(state, filter) {
+      state.currentFilter = filter.payload;
     },
   },
 });
 
-export default librarySlice;
+export default librarySlice.reducer;
 export const {
   addBook,
   deleteBook,
