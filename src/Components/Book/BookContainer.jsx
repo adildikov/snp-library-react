@@ -2,9 +2,12 @@ import React, { useCallback, useState } from "react";
 import "./style.css";
 import Book from "./Book";
 import { useDispatch } from "react-redux";
-import { editCurrentBookId } from "../../redux/currentBookId/actions";
 import { useHistory } from "react-router-dom";
-import { deleteBookThunk, editBookThunk } from "../../redux/books/thunks";
+import {
+  deleteBookThunk,
+  editBookThunk,
+} from "../../redux/library/books/thunks";
+import { editCurrentBookId } from "../../redux/library/slice";
 
 export default React.memo(function BookContainer({
   id,

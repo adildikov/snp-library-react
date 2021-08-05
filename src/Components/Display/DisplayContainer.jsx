@@ -1,8 +1,8 @@
 import React, { useCallback, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { getBooks } from "../../redux/books/selectors";
-import { getCurrentBookId } from "../../redux/currentBookId/selectors";
+import { getBooks } from "../../redux/library/books/selectors";
+import { getCurrentBookId } from "../../redux/library/currentBookId/selectors";
 import Display from "./Display";
 import DisplayError from "./DisplayError";
 

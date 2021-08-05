@@ -3,11 +3,11 @@ import Filter from "./Filter";
 import queryString from "query-string";
 import { useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { editCurrentFilter } from "../../redux/currentFilter/actions";
 import {
   getFilteredBooksThunk,
   initBooksThunk,
-} from "../../redux/books/thunks";
+} from "../../redux/library/books/thunks";
+import { editCurrentFilter } from "../../redux/library/slice";
 
 export default function FilterContainer() {
   const history = useHistory();
