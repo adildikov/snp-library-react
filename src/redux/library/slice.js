@@ -17,10 +17,7 @@ const librarySlice = createSlice({
     editBook(state, { id, newBook }) {
       state.books.forEach((book) => {
         if (book.id === id) {
-          book.title = newBook.title;
-          book.author = newBook.author;
-          book.description = newBook.description;
-          book.image = newBook.image;
+          book = newBook;
         }
       });
     },

@@ -1,8 +1,9 @@
 import React, { useCallback, useState } from "react";
-import Main from "./Main";
-import { useDispatch, useSelector } from "react-redux";
-import { getBooks } from "../../redux/library/books/selectors";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import Main from "./Main";
+import { getBooks } from "../../redux/library/books/selectors";
 import { initBooksThunk, addBookThunk } from "../../redux/library/books/thunks";
 
 export default function MainContainer() {

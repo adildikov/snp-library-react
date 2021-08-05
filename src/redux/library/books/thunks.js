@@ -5,7 +5,7 @@ import {
   getBooksRequest,
   getFilteredBooksRequest,
   postBookRequest,
-} from "../../../Api";
+} from "../../../api";
 import { addBook, deleteBook, editBook, setBooks } from "../slice";
 
 export const initBooksThunk = () => (dispatch) => {

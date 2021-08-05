@@ -1,10 +1,12 @@
 import React from "react";
+
 import Title from "../Title";
-import "./style.css";
+
+import styles from "./style.module.scss";
 
 export default function DisplayError() {
   return (
-    <div className="display_wrapper">
+    <div className={styles.display_wrapper}>
       <Title title={"First select a book from the library"} />
     </div>
   );

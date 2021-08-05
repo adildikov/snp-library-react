@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from "react";
-import "./style.css";
-import Book from "./Book";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+
+import Book from "./Book";
 import {
   deleteBookThunk,
   editBookThunk,

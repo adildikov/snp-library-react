@@ -1,8 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
-import Filter from "./Filter";
 import queryString from "query-string";
 import { useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
+
+import Filter from "./Filter";
 import {
   getFilteredBooksThunk,
   initBooksThunk,

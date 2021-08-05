@@ -1,10 +1,12 @@
 import React from "react";
-import "./style.css";
+
 import BookContainer from "../Book/BookContainer";
+
+import styles from "./style.module.scss";
 
 export default React.memo(function BookList({ books }) {
   return (
-    <ul className="BookList_wrapper">
+    <ul className={styles.BookList_wrapper}>
       {books.map((book) => (
         <BookContainer
           key={book.id}

@@ -1,12 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./style.css";
+
+import styles from "./style.module.scss";
 
 export default React.memo(function Header({ currentBookId }) {
   return (
-    <header className="header_wrapper">
+    <header className={styles.header_wrapper}>
       <nav>
-        <ul className="nav">
+        <ul className={styles.nav}>
           <li>
             <NavLink exact to="/books">
               Home

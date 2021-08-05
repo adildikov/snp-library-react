@@ -4,8 +4,6 @@
   display: flex;
   flex-direction: column;
 
-  background-color: rgb(233, 233, 233);
-
   margin: 20px auto;
   padding: 50px 50px 20px 50px;
 
@@ -14,6 +12,7 @@
 
   border: none;
   border-radius: 30px;
+  background-color: rgb(233, 233, 233);
 }
 
 .display_body .book__bookCover {
@@ -37,11 +36,10 @@
 
   margin: 20px auto 0 auto;
 
-  color: #fff;
-  background-color: rgb(62, 139, 255);
-
   border: none;
   border-radius: 5px;
+  color: #fff;
+  background-color: rgb(62, 139, 255);
 }
 
 .backBtn:hover {

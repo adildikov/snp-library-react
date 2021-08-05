@@ -1,7 +1,10 @@
 import React from "react";
+
 import Portal from "./Portal";
-import "./style.css";
+
 import { ImCross } from "react-icons/im";
+
+import styles from "./style.module.scss";
 
 export default React.memo(function Modal({
   title,
@@ -14,18 +17,18 @@ export default React.memo(function Modal({
     <>
       {isOpen && (
         <Portal>
-          <div className="modal_overlay">
-            <div className="modal_wrapper">
-              <div className="modal_header">
-                <div className="modal_title">{title}</div>
-                <ImCross onClick={onCancel} className="close" />
+          <div className={styles.modal_overlay}>
+            <div className={styles.modal_wrapper}>
+              <div className={styles.modal_header}>
+                <div className={styles.modal_title}>{title}</div>
+                <ImCross onClick={onCancel} className={styles.close} />
               </div>
-              <div className="modal_body">{children}</div>
-              <div className="modal_footer">
-                <button onClick={onCancel} className="cancelBtn">
+              <div className={styles.modal_body}>{children}</div>
+              <div className={styles.modal_footer}>
+                <button onClick={onCancel} className={styles.cancelBtn}>
                   Cancel
                 </button>
-                <button onClick={onSubmit} className="submitBtn">
+                <button onClick={onSubmit} className={styles.submitBtn}>
                   Submit
                 </button>
               </div>
